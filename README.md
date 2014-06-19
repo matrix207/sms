@@ -37,69 +37,69 @@ send sms by GSM modem
 4. Sample, test on Fedora 20. Because my device antenna is broken, so most of 
    the time failed to send message.
 
-    [dennis@localhost sms]$ ls
-    Makefile  README.md  sms.c  sms.h
-    [dennis@localhost sms]$ make
-    gcc    -c -o sms.o sms.c
-    gcc -Wall -o sms sms.o
-    [dennis@localhost sms]$ ls
-    Makefile  README.md  sms  sms.c  sms.h  sms.o
-    [dennis@localhost sms]$ su -c './sms /dev/ttyUSB0 137******** "Hi, I am GSM modem"'
-    Password: 
-    send: AT
-    recv: AT
-    OK
-    send: ATE0
-    recv: 
-    ATE0
-    OK
-    send: AT+CNMI=2,1
-    recv: 
+        [dennis@localhost sms]$ ls
+        Makefile  README.md  sms.c  sms.h
+        [dennis@localhost sms]$ make
+        gcc    -c -o sms.o sms.c
+        gcc -Wall -o sms sms.o
+        [dennis@localhost sms]$ ls
+        Makefile  README.md  sms  sms.c  sms.h  sms.o
+        [dennis@localhost sms]$ su -c './sms /dev/ttyUSB0 137******** "Hi, I am GSM modem"'
+        Password: 
+        send: AT
+        recv: AT
+        OK
+        send: ATE0
+        recv: 
+        ATE0
+        OK
+        send: AT+CNMI=2,1
+        recv: 
 
-    OK
-    send: AT+CMGF=1
-    recv: 
+        OK
+        send: AT+CMGF=1
+        recv: 
 
-    OK
-    Initialization OK.
-    send: AT+CMGS=137********
-    recv: 
+        OK
+        Initialization OK.
+        send: AT+CMGS=137********
+        recv: 
 
-    >
-    send: Hi, I am GSM modem
-    recv:  
-    ERROR
-    close device
+        >
+        send: Hi, I am GSM modem
+        recv:  
+        ERROR
+        close device
 
-    [dennis@localhost sms]$ su -c './sms /dev/ttyUSB0 137******** "Hi, I am GSM modem"'
-    Password: 
-    send: AT
-    recv: 
-    OK
-    send: ATE0
-    recv: 
+        [dennis@localhost sms]$ su -c './sms /dev/ttyUSB0 137******** "Hi, I am GSM modem"'
+        Password: 
+        send: AT
+        recv: 
+        OK
+        send: ATE0
+        recv: 
 
-    OK
-    send: AT+CNMI=2,1
-    recv: 
+        OK
+        send: AT+CNMI=2,1
+        recv: 
 
-    OK
-    send: AT+CMGF=1
-    recv: 
+        OK
+        send: AT+CMGF=1
+        recv: 
 
-    OK
-    Initialization OK.
-    send: AT+CMGS=137********
-    recv: 
+        OK
+        Initialization OK.
+        send: AT+CMGS=137********
+        recv: 
 
-    >
-    send: Hi, I am GSM modem
-    recv:  
-    +CMGS: 10
+        >
+        send: Hi, I am GSM modem
+        recv:  
+        +CMGS: 10
 
-    OK
-    Success to send SMS.
-    close device
+        OK
+        Success to send SMS.
+        close device
         
 ###Todo
 * Finish receive and delete sms message?
